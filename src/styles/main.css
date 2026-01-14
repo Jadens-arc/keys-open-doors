@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode base styles */
+@layer base {
+  body {
+    @apply text-gray-100;
+    background-color: #1a1612;
+  }
+}
+
+/* Custom styles for piano keys */
+@layer components {
+  .piano-key-white {
+    @apply bg-gray-100 border border-gray-600 rounded-b-lg shadow-lg;
+    @apply hover:bg-gray-200 transition-colors duration-150;
+    @apply cursor-pointer;
+  }
+
+  .piano-key-black {
+    @apply bg-gray-950 border border-gray-800 rounded-b-md shadow-xl;
+    @apply hover:bg-gray-900 transition-colors duration-150;
+    @apply cursor-pointer;
+  }
+
+  .piano-key-highlighted {
+    @apply bg-blue-400;
+  }
+
+  .piano-key-highlighted.piano-key-black {
+    @apply bg-blue-600 border-blue-500;
+  }
+
+  .piano-key-active {
+    @apply bg-green-400;
+  }
+
+  .piano-key-active.piano-key-black {
+    @apply bg-green-600 border-green-500;
+  }
+
+  .piano-key-dimmed {
+    @apply opacity-30;
+  }
+
+  .piano-key-not-in-scale {
+    @apply opacity-20;
+  }
+
+  .piano-key-not-in-scale.piano-key-white {
+    @apply bg-gray-400;
+  }
+
+  .piano-key-not-in-scale.piano-key-black {
+    @apply bg-gray-950;
+  }
+}
+
+/* Custom PrimeVue button overrides */
+/* Primary (selected) buttons */
+.p-button.p-button-primary:not(.p-button-outlined) {
+  background-color: #3b82f6 !important;
+  border-color: #2563eb !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.p-button.p-button-primary:not(.p-button-outlined):hover {
+  background-color: #2563eb !important;
+  border-color: #1d4ed8 !important;
+}
+
+/* Success (selected chord) buttons */
+.p-button.p-button-success:not(.p-button-outlined) {
+  background-color: #22c55e !important;
+  border-color: #16a34a !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.p-button.p-button-success:not(.p-button-outlined):hover {
+  background-color: #16a34a !important;
+  border-color: #15803d !important;
+}
+
+/* Secondary (unselected) outlined buttons */
+.p-button.p-button-outlined {
+  background-color: rgba(61, 50, 40, 0.5) !important;
+  border-color: #5a4d3f !important;
+  color: #d1c4b0 !important;
+}
+
+.p-button.p-button-outlined:hover:not(:disabled) {
+  background-color: rgba(74, 62, 48, 0.7) !important;
+  border-color: #6b5d4f !important;
+  color: #e8dcc8 !important;
+}
+
+/* Disabled buttons */
+.p-button:disabled {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+}
